@@ -1,0 +1,4 @@
+#!/bin/bash
+source ~/.bash_profile  # in case it's run directly after installing...
+cd ../../../code
+jupyter notebook

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# This file is used to install Jupyter Notebook
+# To use, type:
+# ./install.sh
+potential=($(ls -1 /Library/Frameworks/Python.framework/Versions/3.[6,7,8,9]/bin/python3 2> /dev/null))
+if [ ! $? == 0 ]; then
+	echo "-----"; echo "You need to download:"; echo; echo "PYTHON 3 (3.6.0 or greater)"; echo; echo "from http://python.org/downloads/"; echo; echo "to continue"; echo; open "http://python.org/downloads/"; exit 1;
+fi
+
+command -v $potential >/dev/null 2>&1 || { echo; echo "You need to upgrade your version of Python:"; echo; echo "PYTHON 3 (3.6.0 or greater)"; echo; echo "from http://python.org/downloads/"; echo; echo "to continue"; echo; open "http://python.org/downloads/"; exit 1; }
+
+echo
+echo '------'
+echo 'Downloading needed stuff'
+echo 'This will take a while'
+echo 'Do not quit until you see the thumbs-up'
+echo '------'
+echo
+
+pipcommand=`echo $potential | sed -e 's/python3$/pip3/'`
+$pipcommand install -r ../../../requirements.txt
+
+echo 👍
