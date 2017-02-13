@@ -1,4 +1,5 @@
 #!/bin/bash
 source ~/.bash_profile  # in case it's run directly after installing...
-cd ../../../code
+echo hi
+cd code
 jupyter notebook
