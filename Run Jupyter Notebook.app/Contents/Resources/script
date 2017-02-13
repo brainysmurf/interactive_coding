@@ -1,5 +1,6 @@
 #!/bin/bash
+
 source ~/.bash_profile  # in case it's run directly after installing...
-echo hi
-cd code
+cd ../../code
+echo `pwd`
 jupyter notebook
