@@ -1,1 +1,2 @@
 jupyter
+git+https://github.com/dunovank/jupyter-themes.git
