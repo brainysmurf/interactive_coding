@@ -21,7 +21,7 @@ echo '------'
 echo
 
 pipcommand=`echo $potential | sed -e 's/python3$/pip3/'`
-$pipcommand install -r ../../../requirements.txt
+$pipcommand install jupyter git+https://github.com/dunovank/jupyter-themes.git
 pipresult=$?
 
 if [ $pipresult == 0 ]; then
